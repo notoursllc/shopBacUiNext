@@ -1,6 +1,18 @@
+<script>
+export default {
+    name: 'AboutView'
+}
+</script>
+
+<script setup>
+import { useRoute } from 'vue-router';
+
+const $route = useRoute();
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>This is an about page {{ $route.params.type }}</h1>
   </div>
 </template>
 

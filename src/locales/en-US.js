@@ -9,7 +9,7 @@ export default {
     "About": "About",
     "About Billing and Shipping Addresses": "About Billing and Shipping Addresses",
     "Accent Message": "Accent Message",
-    "Accent Messages": "Accent Messages",
+    "Accent messages": "Accent messages",
     "accent_message_description": "A short message that appears for this variant on the product list page",
     "accept_privacy_and_tos": "By placing your order, you agree to our {linkPrivacy} and {linkTos}.",
     "Account": "Account",
@@ -28,6 +28,7 @@ export default {
     "Add Option": "Add Option",
     "Add Package Type": "Add Package Type",
     "Add product": "Add product",
+    "Add product collection": "Add product collection",
     "Add row": "Add row",
     "Add SKU": "Add SKU",
     "Add supported currencies": "Add supported currencies",
@@ -116,7 +117,6 @@ export default {
     "Clear table": "Clear table",
     "Collection added successfully": "Collection added successfully",
     "Collection updated successfully": "Collection updated successfully",
-    "Collections": "Collections",
     "Color": "Color",
     "Color swatches": "Color swatches",
     "Colors": "Colors",
@@ -192,6 +192,7 @@ export default {
     "Edit Master Type ({name})": "Edit Master Type ({name})",
     "Edit Nexus": "Edit Nexus",
     "Edit Package Type": "Edit Package Type",
+    "Edit product collection": "Edit product collection",
     "Edit swatch: {name}": "Edit swatch: {name}",
     "Edit variant: {variant}": "Edit variant: {variant}",
     "Email address": "Email address",
@@ -652,6 +653,19 @@ export default {
             "name": "USPS Priority Mail",
             "desc": "Delivery averages 2-4 business days."
         }
+    },
+
+    "master_type_nav_labels": {
+        "product_basic_color_type": "Basic colors",
+        "product_feature_type": "Product features",
+        "product_fit_type": "Product fits",
+        "product_gender_type": "Genders",
+        "product_sales_channel_type": "Sales channels",
+        "product_size_type": "Sizes",
+        "product_sleeve_length_type": "Sleeve lengths",
+        "product_sub_type": "Product sub-types",
+        "product_type": "Product types",
+        "product_vendor_type": "Vendors"
     },
 
     "ADDRESS_VERIFICATION_FAILURE": "The 'Postal code' value is invalid.",
