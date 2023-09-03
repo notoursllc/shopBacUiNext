@@ -275,12 +275,6 @@ export default function useApi() {
     },
 
     api.masterType = {
-        stripRelations(data) {
-            delete data.created_at;
-            delete data.updated_at;
-            return data;
-        },
-
         delete(id) {
             return api.$delete('/master_type', { id });
         },
@@ -298,7 +292,7 @@ export default function useApi() {
         },
 
         upsert(data) {
-            return api[data.hasOwnProperty('id') ? '$put' : '$post']('/master_type', api.masterType.stripRelations(data));
+            return api[data.hasOwnProperty('id') ? '$put' : '$post']('/master_type', stripRelationsBasic(data));
         },
 
         getNextAvailableTypeValue(allTypes) {
@@ -349,8 +343,7 @@ export default function useApi() {
     api.packageType = {
         stripRelations(data) {
             delete data.volume_cm;
-            delete data.created_at;
-            delete data.updated_at;
+            return stripRelationsBasic(data);
         },
 
         delete(id) {
@@ -371,9 +364,7 @@ export default function useApi() {
 
         upsert(data) {
             const type = cloneDeep(data);
-            api.packageType.stripRelations(type);
-
-            return api[data.hasOwnProperty('id') ? '$put' : '$post']('/package_type', type);
+            return api[data.hasOwnProperty('id') ? '$put' : '$post']('/package_type', api.packageType.stripRelations(type));
         }
     };
 
@@ -472,12 +463,6 @@ export default function useApi() {
         },
 
         accentMessage: {
-            stripRelations(data) {
-                delete data.created_at;
-                delete data.updated_at;
-                delete data.deleted_at;
-            },
-
             get(id) {
                 return api.$get('/product/accent_message', { id });
             },
@@ -492,19 +477,11 @@ export default function useApi() {
 
             upsert(data) {
                 const d = cloneDeep(data);
-                api.product.accentMessage.stripRelations(d);
-
-                return api[d.id ? '$put' : '$post']('/product/accent_message', d);
+                return api[d.id ? '$put' : '$post']('/product/accent_message', stripRelationsBasic(d));
             }
         },
 
         collection: {
-            stripRelations(data) {
-                delete data.created_at;
-                delete data.updated_at;
-                delete data.deleted_at;
-            },
-
             get(id) {
                 return api.$get('/product/collection', { id });
             },
@@ -519,9 +496,7 @@ export default function useApi() {
 
             upsert(data) {
                 const prod = cloneDeep(data);
-                api.product.collection.stripRelations(prod);
-
-                return api[prod.id ? '$put' : '$post']('/product/collection', prod);
+                return api[prod.id ? '$put' : '$post']('/product/collection', stripRelationsBasic(prod));
             }
         },
 
@@ -539,7 +514,8 @@ export default function useApi() {
             },
 
             upsert(data) {
-                return api[data.hasOwnProperty('id') ? '$put' : '$post']('/product/color_swatches', data);
+                const d = cloneDeep(data);
+                return api[data.id ? '$put' : '$post']('/product/color_swatch', stripRelationsBasic(d));
             }
         },
 
@@ -660,6 +636,14 @@ export default function useApi() {
     api.appConfig = () => {
         return api.$get('/app_config')
     };
+
+
+    function stripRelationsBasic(data) {
+        delete data.created_at;
+        delete data.updated_at;
+        delete data.deleted_at;
+        return data;
+    }
 
 
     return api;

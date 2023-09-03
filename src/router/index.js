@@ -42,7 +42,7 @@ const router = createRouter({
             path: '/global/color-swatch-types',
             name: 'global-color-swatch-types',
             meta: { layout: DefaultLayout },
-            component: () => import('../views/AboutView.vue')
+            component: () => import('../views/global/ColorSwatches.vue')
         },
         {
             path: '/global/package-types',
