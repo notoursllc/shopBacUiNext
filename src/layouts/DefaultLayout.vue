@@ -65,7 +65,6 @@ const globalSettingsChildren = computed(() => {
         icon: null
     }
 
-    console.log("sortOrder", sortOrder);
 
     return Object.values(sortOrder).filter(item => item !== null);
 });
@@ -80,6 +79,20 @@ const navData = computed(() => {
             icon: null
         },
         {
+            label: t('Product artists'),
+            href: { name: 'product-artists'},
+            active: false,
+            children: [],
+            icon: null
+        },
+        {
+            label: t('Hero slides'),
+            href: { name: 'hero-slides'},
+            active: false,
+            children: [],
+            icon: null
+        },
+        {
             label: t('Global settings'),
             href: '#',
             active: false,
@@ -87,7 +100,21 @@ const navData = computed(() => {
                 ...globalSettingsChildren.value
             ],
             icon: null
-        }
+        },
+        {
+            label: t('Exchange rates'),
+            href: { name: 'exchange-rates'},
+            active: false,
+            children: [],
+            icon: null
+        },
+        {
+            label: t('Account'),
+            href: { name: 'account'},
+            active: false,
+            children: [],
+            icon: null
+        },
     ]
 });
 </script>

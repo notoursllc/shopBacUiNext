@@ -21,6 +21,18 @@ const router = createRouter({
             component: () => import('../views/AboutView.vue')
         },
         {
+            path: '/product-artists',
+            name: 'product-artists',
+            meta: { layout: DefaultLayout },
+            component: () => import('../views/ProductArtists.vue')
+        },
+        {
+            path: '/hero-slides',
+            name: 'hero-slides',
+            meta: { layout: DefaultLayout },
+            component: () => import('../views/HeroSlides.vue')
+        },
+        {
             path: '/global/:type',
             name: 'global',
             meta: { layout: DefaultLayout },
@@ -49,6 +61,18 @@ const router = createRouter({
             name: 'global-package-types',
             meta: { layout: DefaultLayout },
             component: () => import('../views/global/PackageTypes.vue')
+        },
+        {
+            path: '/exchange-rates',
+            name: 'exchange-rates',
+            meta: { layout: DefaultLayout },
+            component: () => import('../views/ExchangeRates.vue')
+        },
+        {
+            path: '/account',
+            name: 'account',
+            meta: { layout: DefaultLayout },
+            component: () => import('../views/Account.vue')
         },
         {
             path: '/tenantmember/login',
