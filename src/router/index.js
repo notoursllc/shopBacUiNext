@@ -48,7 +48,7 @@ const router = createRouter({
             path: '/global/package-types',
             name: 'global-package-types',
             meta: { layout: DefaultLayout },
-            component: () => import('../views/AboutView.vue')
+            component: () => import('../views/global/PackageTypes.vue')
         },
         {
             path: '/tenantmember/login',

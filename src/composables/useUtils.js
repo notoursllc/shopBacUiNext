@@ -134,14 +134,18 @@ export default function useUtils() {
     }
 
 
-    function cm_to_in(cm) {
+    function cmToInches(cm) {
         if(!isNumeric(cm)) {
             console.error(`cm_to_in method was not given a numeric value: ${cm}`);
             return null;
         }
 
-        const inches = cm * 0.39370079;
-        return Math.round(inches * 100) / 100;
+        // TODO: not sure if this logic is correct,
+        // or if the commented logic below is correct
+        return Number.parseFloat(cm / 2.54).toFixed(2);
+
+        // const inches = cm * 0.39370079;
+        // return Math.round(inches * 100) / 100;
     }
 
 
@@ -157,7 +161,7 @@ export default function useUtils() {
         isUuid,
         colorLuminance,
         in_to_cm,
-        cm_to_in
+        cmToInches
     }
 
 }

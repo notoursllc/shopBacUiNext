@@ -1,5 +1,8 @@
 // copied from: https://github.com/antfu/vitesse/blob/main/src/modules/i18n.ts
 import { createI18n } from 'vue-i18n';
+import { FigUseI18n } from '@notoursllc/figleaf';
+
+const config = FigUseI18n();
 
 // Import i18n resources
 // https://vitejs.dev/guide/features.html#glob-import
@@ -8,6 +11,8 @@ const i18n = createI18n({
     legacy: false,
     locale: '',
     messages: {},
+    numberFormats: config.numberFormats,
+    dateTimeFormats: config.dateTimeFormats,
 });
 
 const localesMap = Object.fromEntries(
@@ -51,7 +56,7 @@ export async function loadLanguageAsync(lang) {
 
 export default {
     install: (app) => {
-        console.log('installing i18n')
+        // console.log('installing i18n')
 
         app.use(i18n);
         loadLanguageAsync('en-US')
