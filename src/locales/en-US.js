@@ -297,6 +297,7 @@ export default {
     "n_pictures": "{num} picture | {num} pictures",
     "Name": "Name",
     "Nexus": "Nexus",
+    "New image": "New image",
     "New message": "New message",
     "New option": "New option",
     "Nexus: {name}": "Nexus: {name}",

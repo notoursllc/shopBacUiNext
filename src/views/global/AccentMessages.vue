@@ -165,8 +165,7 @@ onMounted(() => {
                         <fig-operations-dropdown
                             :show-view="false"
                             @edit="onEdit(obj.id)"
-                            @delete="onDelete(obj)"
-                            class="ml-1" />
+                            @delete="onDelete(obj)" />
                     </fig-td>
                 </fig-tr>
 
