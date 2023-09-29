@@ -79,6 +79,21 @@ const navData = computed(() => {
             icon: null
         },
         {
+            label: t('Reports'),
+            href: '#',
+            active: false,
+            children: [
+                {
+                    label: t('Orders'),
+                    href: { name: 'reports-orders'},
+                    active: false,
+                    children: [],
+                    icon: null
+                }
+            ],
+            icon: null
+        },
+        {
             label: t('Product artists'),
             href: { name: 'product-artists'},
             active: false,

@@ -14,11 +14,20 @@ const router = createRouter({
             // which is lazy-loaded when the route is visited.
             component: () => import('../views/HomeView.vue')
         },
+
+        // DONE
         {
-            path: '/about',
-            name: 'about',
+            path: '/reports/orders',
+            name: 'reports-orders',
             meta: { layout: DefaultLayout },
-            component: () => import('../views/AboutView.vue')
+            component: () => import('../views/reports/orders/OrdersList.vue')
+        },
+
+        {
+            path: '/reports/orders/:id',
+            name: 'reports-orders-id',
+            meta: { layout: DefaultLayout },
+            component: () => import('../views/reports/orders/OrderDetail.vue')
         },
 
         // DONE
@@ -86,12 +95,14 @@ const router = createRouter({
             component: () => import('../views/ExchangeRates.vue')
         },
 
+        // DONE
         {
             path: '/account',
             name: 'account',
             meta: { layout: DefaultLayout },
             component: () => import('../views/Account.vue')
         },
+
         {
             path: '/tenantmember/login',
             name: 'tenantmember-login',
